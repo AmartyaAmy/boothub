@@ -62,7 +62,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[100svh] overflow-hidden dark-section">
+    <section className="relative flex min-h-[100svh] flex-col overflow-hidden dark-section">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
@@ -76,6 +76,7 @@ export function Hero() {
         invert
       />
 
+      <div className="relative grid flex-1 grid-cols-1 grid-rows-1">
       {slides.map((s, idx) => {
         const product = (products.find((p) => p.slug === s.slug) ?? products[0])!;
         const active = idx === i;
@@ -83,10 +84,10 @@ export function Hero() {
           <div
             key={s.slug}
             aria-hidden={!active}
-            className="absolute inset-0 transition-opacity duration-1000 ease-out"
+            className="col-start-1 row-start-1 transition-opacity duration-1000 ease-out"
             style={{ opacity: active ? 1 : 0, pointerEvents: active ? "auto" : "none" }}
           >
-            <div className="mx-auto grid h-full max-w-[1500px] grid-cols-1 items-center gap-6 px-5 pt-32 pb-24 md:grid-cols-[1.05fr_1fr] md:px-10 md:pt-28 md:pb-16">
+            <div className="mx-auto grid h-full max-w-[1500px] grid-cols-1 items-center gap-6 px-5 pt-32 pb-10 md:grid-cols-[1.05fr_1fr] md:px-10 md:pt-28 md:pb-14">
               <div className="order-2 md:order-1">
                 <p className="eyebrow inline-flex items-center gap-2 rounded-full border border-accent-hot/40 bg-accent-hot/10 px-3.5 py-1.5 text-accent-hot backdrop-blur-sm">
                   <span className="h-1.5 w-1.5 rounded-full bg-accent-hot" />
@@ -124,7 +125,7 @@ export function Hero() {
                 </div>
               </div>
 
-              <div className="order-1 flex h-[38svh] items-center justify-center md:order-2 md:h-[74vh]">
+              <div className="order-1 flex h-[34svh] min-h-[220px] items-center justify-center md:order-2 md:h-[70vh]">
                 <img
                   src={product.images[0]}
                   alt={`${product.brand} ${product.name}`}
@@ -142,10 +143,11 @@ export function Hero() {
           </div>
         );
       })}
+      </div>
 
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 bottom-6 z-10 mx-auto flex max-w-[1500px] items-center gap-2 px-5 md:px-10"
+        className="relative z-10 mx-auto flex w-full max-w-[1500px] items-center gap-2 px-5 pb-8 md:px-10"
       >
         {slides.map((s, idx) => (
           <span key={s.slug} className="h-[3px] flex-1 overflow-hidden bg-bone/20">
