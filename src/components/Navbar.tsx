@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { INSTAGRAM_URL } from "@/data/products";
 import { Wordmark } from "./Logo";
 import { IconInstagram } from "./Icons";
+import { SaleBanner } from "./SaleBanner";
 
 const links = [
   { label: "Shop", to: "/shop" },
@@ -35,6 +36,7 @@ export function Navbar({ overHero = false }: { overHero?: boolean }) {
         borderBottom: solid ? "1px solid var(--hairline-invert)" : "1px solid transparent",
       }}
     >
+      <SaleBanner />
       <nav className="mx-auto flex h-16 max-w-[1500px] items-center justify-between px-5 md:h-20 md:px-10">
         <Link to="/" aria-label="BootHub home" className="shrink-0">
           <Wordmark className="h-3.5 md:h-4" invert />
