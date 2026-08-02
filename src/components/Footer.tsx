@@ -23,7 +23,7 @@ const cols = [
   {
     title: "Policies",
     links: [
-      { label: "Returns & Exchanges", to: "/policies", hash: "returns" },
+      { label: "Exchanges", to: "/policies", hash: "returns" },
       { label: "Refund Policy", to: "/policies", hash: "refunds" },
       { label: "Shipping", to: "/policies", hash: "shipping" },
       { label: "Terms & Privacy", to: "/policies", hash: "terms" },

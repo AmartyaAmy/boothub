@@ -5,7 +5,7 @@ import { PHONE_DISPLAY, PHONE_HREF } from "@/data/products";
 export const Route = createFileRoute("/policies")({
   head: () => ({
     meta: [
-      { title: "Returns, Shipping & Policies | BootHub" },
+      { title: "Exchanges, Shipping & Policies | BootHub" },
       {
         name: "description",
         content:
@@ -26,9 +26,9 @@ export const Route = createFileRoute("/policies")({
 const sections = [
   {
     id: "returns",
-    title: "Returns & Exchanges",
+    title: "Exchanges",
     body: [
-      "Seven days from delivery to return or exchange any pair, provided the studs are unused and the box is intact.",
+      "Seven days from delivery to exchange any pair, provided the studs are unused and the box is intact.",
       "Size swaps are free — one per order. Message us on Instagram or WhatsApp with your order name and the size you need.",
     ],
   },
