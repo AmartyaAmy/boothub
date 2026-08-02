@@ -9,12 +9,12 @@ export const Route = createFileRoute("/policies")({
       {
         name: "description",
         content:
-          "BootHub policies: 7-day returns and exchanges, free pan-India shipping, cash on delivery, refunds, terms and privacy.",
+          "BootHub policies: 7-day exchanges, free pan-India shipping, cash on delivery, refunds, terms and privacy.",
       },
       { property: "og:title", content: "Policies — BootHub" },
       {
         property: "og:description",
-        content: "7-day returns, free shipping, COD, refunds, terms and privacy in plain language.",
+        content: "7-day exchange, free shipping, COD, refunds, terms and privacy in plain language.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

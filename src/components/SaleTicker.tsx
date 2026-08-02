@@ -2,7 +2,7 @@ const items = [
   "SALE LIVE — EVERY PAIR ₹6,999",
   "FREE SHIPPING PAN-INDIA",
   "COD AVAILABLE",
-  "7-DAY RETURNS",
+  "7-DAY EXCHANGE",
 ];
 
 export function SaleTicker() {

@@ -81,13 +81,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Premium Nike and Adidas football boots at a flat ₹6,999. COD, free pan-India shipping, 7-day returns.",
+          "Premium Nike and Adidas football boots at a flat ₹6,999. COD, free pan-India shipping, 7-day exchange.",
       },
       { name: "author", content: "BootHub" },
       { property: "og:title", content: "BootHub — Your Next Goal Starts Here" },
       {
         property: "og:description",
-        content: "Elite Nike and Adidas boots, flat ₹6,999. COD, free shipping, 7-day returns.",
+        content: "Elite Nike and Adidas boots, flat ₹6,999. COD, free shipping, 7-day exchange.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

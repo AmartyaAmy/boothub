@@ -13,7 +13,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "BootHub sells elite Nike and Adidas football boots at a flat ₹6,999 with COD, free pan-India shipping and 7-day returns. Here's how and why.",
+          "BootHub sells elite Nike and Adidas football boots at a flat ₹6,999 with COD, free pan-India shipping and 7-day exchange. Here's how and why.",
       },
       { property: "og:title", content: "About BootHub" },
       {
