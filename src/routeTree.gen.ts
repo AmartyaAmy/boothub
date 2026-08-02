@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as LimitedRouteImport } from './routes/limited'
+import { Route as PoliciesRouteImport } from './routes/policies'
+import { Route as ShopRouteImport } from './routes/shop'
+import { Route as BootsSlugRouteImport } from './routes/boots.$slug'
+import { Route as BrandBrandRouteImport } from './routes/brand.$brand'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LimitedRoute = LimitedRouteImport.update({
+  id: '/limited',
+  path: '/limited',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliciesRoute = PoliciesRouteImport.update({
+  id: '/policies',
+  path: '/policies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopRoute = ShopRouteImport.update({
+  id: '/shop',
+  path: '/shop',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BootsSlugRoute = BootsSlugRouteImport.update({
+  id: '/boots/$slug',
+  path: '/boots/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrandBrandRoute = BrandBrandRouteImport.update({
+  id: '/brand/$brand',
+  path: '/brand/$brand',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/limited': typeof LimitedRoute
+  '/policies': typeof PoliciesRoute
+  '/shop': typeof ShopRoute
+  '/boots/$slug': typeof BootsSlugRoute
+  '/brand/$brand': typeof BrandBrandRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/limited': typeof LimitedRoute
+  '/policies': typeof PoliciesRoute
+  '/shop': typeof ShopRoute
+  '/boots/$slug': typeof BootsSlugRoute
+  '/brand/$brand': typeof BrandBrandRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/limited': typeof LimitedRoute
+  '/policies': typeof PoliciesRoute
+  '/shop': typeof ShopRoute
+  '/boots/$slug': typeof BootsSlugRoute
+  '/brand/$brand': typeof BrandBrandRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/limited'
+    | '/policies'
+    | '/shop'
+    | '/boots/$slug'
+    | '/brand/$brand'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/limited'
+    | '/policies'
+    | '/shop'
+    | '/boots/$slug'
+    | '/brand/$brand'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/limited'
+    | '/policies'
+    | '/shop'
+    | '/boots/$slug'
+    | '/brand/$brand'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  LimitedRoute: typeof LimitedRoute
+  PoliciesRoute: typeof PoliciesRoute
+  ShopRoute: typeof ShopRoute
+  BootsSlugRoute: typeof BootsSlugRoute
+  BrandBrandRoute: typeof BrandBrandRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +143,68 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/limited': {
+      id: '/limited'
+      path: '/limited'
+      fullPath: '/limited'
+      preLoaderRoute: typeof LimitedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/policies': {
+      id: '/policies'
+      path: '/policies'
+      fullPath: '/policies'
+      preLoaderRoute: typeof PoliciesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop': {
+      id: '/shop'
+      path: '/shop'
+      fullPath: '/shop'
+      preLoaderRoute: typeof ShopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/boots/$slug': {
+      id: '/boots/$slug'
+      path: '/boots/$slug'
+      fullPath: '/boots/$slug'
+      preLoaderRoute: typeof BootsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/brand/$brand': {
+      id: '/brand/$brand'
+      path: '/brand/$brand'
+      fullPath: '/brand/$brand'
+      preLoaderRoute: typeof BrandBrandRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  LimitedRoute: LimitedRoute,
+  PoliciesRoute: PoliciesRoute,
+  ShopRoute: ShopRoute,
+  BootsSlugRoute: BootsSlugRoute,
+  BrandBrandRoute: BrandBrandRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
