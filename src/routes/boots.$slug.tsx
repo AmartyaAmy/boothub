@@ -18,7 +18,7 @@ export const Route = createFileRoute("/boots/$slug")({
     const title = loaderData
       ? `${loaderData.brand} ${loaderData.name}${loaderData.subtitle ? ` — ${loaderData.subtitle}` : ""}`
       : "Football Boots";
-    const desc = `${title} at a flat ₹6,999 (MRP ₹10,999). UK 6-12, cash on delivery, free pan-India shipping, 7-day returns.`;
+    const desc = `${title} at a flat ₹6,999 (MRP ₹10,999). UK 6-12, cash on delivery, free pan-India shipping, 7-day exchange.`;
     return {
       meta: [
         { title: `${title} | BootHub` },
@@ -43,7 +43,7 @@ const specs = [
 
 const trust = [
   { Icon: IconCash, label: "Cash on delivery" },
-  { Icon: IconReturn, label: "7-day returns" },
+  { Icon: IconReturn, label: "7-day exchange" },
   { Icon: IconShip, label: "Free shipping" },
   { Icon: IconIndia, label: "Pan-India" },
 ];

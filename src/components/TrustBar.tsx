@@ -3,7 +3,7 @@ import { Reveal } from "./Reveal";
 
 const items = [
   { Icon: IconCash, title: "Cash on Delivery", body: "Pay when the box lands." },
-  { Icon: IconReturn, title: "7-Day Easy Returns", body: "Wrong fit? Send it back." },
+  { Icon: IconReturn, title: "7-Day Easy Exchange", body: "Wrong fit? Swap it free." },
   { Icon: IconShip, title: "Free Shipping", body: "No hidden charges. Ever." },
   { Icon: IconIndia, title: "Delivered Pan-India", body: "Metro to small town." },
 ];

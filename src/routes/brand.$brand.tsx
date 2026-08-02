@@ -23,7 +23,7 @@ export const Route = createFileRoute("/brand/$brand")({
         { title: `${name} Football Boots — Flat ₹6,999 | BootHub` },
         {
           name: "description",
-          content: `Shop ${name} football boots at BootHub for a flat ₹6,999. Sizes UK 6-12, cash on delivery, free pan-India shipping, 7-day returns.`,
+          content: `Shop ${name} football boots at BootHub for a flat ₹6,999. Sizes UK 6-12, cash on delivery, free pan-India shipping, 7-day exchange.`,
         },
         { property: "og:title", content: `${name} Boots — BootHub` },
         {

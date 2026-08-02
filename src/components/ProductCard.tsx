@@ -13,20 +13,22 @@ export function ProductCard({ product, dark = false }: { product: Product; dark?
       aria-label={`${product.brand} ${product.name}`}
     >
       <div
-        className={`relative aspect-[4/5] overflow-hidden transition-transform duration-500 ease-out group-hover:-translate-y-1 ${
-          dark ? "bg-surface-darker" : "bg-white"
+        className={`relative aspect-[4/5] overflow-hidden rounded-sm ring-1 transition-all duration-500 ease-out group-hover:-translate-y-1.5 ${
+          dark
+            ? "bg-surface-darker ring-hairline-invert group-hover:ring-bone/25 group-hover:shadow-[0_30px_60px_-30px_rgba(0,0,0,0.9)]"
+            : "bg-white ring-hairline group-hover:shadow-[0_30px_60px_-30px_rgba(0,0,0,0.35)]"
         }`}
       >
         <div className="absolute inset-0 scale-100 transition-transform duration-700 ease-out group-hover:scale-[1.05]">
           <ImageCarousel images={product.images} alt={`${product.brand} ${product.name}`} />
         </div>
 
-        <span className="absolute top-0 left-0 bg-accent-hot px-2 py-1 text-[10px] font-semibold tracking-[0.18em] text-accent-hot-foreground">
-          -36%
+        <span className="absolute top-0 left-0 z-10 bg-accent-hot px-2 py-1 text-[10px] font-semibold tracking-[0.18em] text-accent-hot-foreground">
+          SALE −36%
         </span>
         {product.limited ? (
           <span
-            className={`absolute top-0 right-0 px-2 py-1 text-[10px] font-semibold tracking-[0.18em] ${
+            className={`absolute top-0 right-0 z-10 px-2 py-1 text-[10px] font-semibold tracking-[0.18em] ${
               dark ? "bg-bone text-ink" : "bg-ink text-bone"
             }`}
           >

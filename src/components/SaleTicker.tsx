@@ -1,12 +1,13 @@
 const items = [
   "SALE LIVE — EVERY PAIR ₹6,999",
+  "WAS ₹10,999 — SAVE 36%",
   "FREE SHIPPING PAN-INDIA",
   "COD AVAILABLE",
-  "7-DAY RETURNS",
+  "7-DAY EXCHANGE",
 ];
 
 export function SaleTicker() {
-  const strip = [...items, ...items, ...items, ...items];
+  const strip = [...items, ...items, ...items];
   return (
     <div className="dark-section overflow-hidden border-y border-hairline-invert py-3.5">
       <div className="flex w-max animate-marquee">
@@ -16,7 +17,9 @@ export function SaleTicker() {
               <li key={`${dup}-${i}`} className="flex items-center">
                 <span
                   className={`eyebrow px-6 ${
-                    label.startsWith("SALE") ? "text-accent-hot" : "text-bone/70"
+                    label.startsWith("SALE") || label.startsWith("WAS")
+                      ? "text-accent-hot"
+                      : "text-bone/70"
                   }`}
                 >
                   {label}
