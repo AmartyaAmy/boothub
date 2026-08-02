@@ -219,6 +219,11 @@
   text-transform: uppercase;
 }
 
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
 @utility dark-section {
   background-color: var(--surface-dark);
   color: var(--bone);
