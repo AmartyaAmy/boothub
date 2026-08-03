@@ -13,11 +13,12 @@ export function SaleBanner() {
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-current opacity-70" />
           <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-current" />
         </span>
-        <span className="eyebrow text-[10px] md:text-[11px]">
+        <span className="font-display text-[11px] font-extrabold uppercase tracking-[0.18em] md:text-xs">
           Sale live — flat ₹6,999 <MaskedMRP className="opacity-60" />
-          <span className="hidden md:inline"> · save 36% on every pair</span>
         </span>
-        <span className="eyebrow text-[10px] md:text-[11px]">Ends: soon</span>
+        <span className="rounded-sm bg-accent-hot-foreground px-1.5 py-0.5 text-[10px] font-extrabold uppercase tracking-widest text-accent-hot md:text-[11px]">
+          Ends soon
+        </span>
       </div>
     </Link>
   );
