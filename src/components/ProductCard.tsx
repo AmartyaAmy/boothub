@@ -23,8 +23,8 @@ export function ProductCard({ product, dark = false }: { product: Product; dark?
           <ImageCarousel images={product.images} alt={`${product.brand} ${product.name}`} />
         </div>
 
-        <span className="absolute top-0 left-0 z-10 bg-accent-hot px-2 py-1 text-[10px] font-semibold tracking-[0.18em] text-accent-hot-foreground">
-          SALE −36%
+        <span className="absolute top-0 left-0 z-10 bg-accent-hot px-2.5 py-1.5 text-[11px] font-extrabold tracking-[0.16em] text-accent-hot-foreground shadow-[0_6px_16px_-4px_rgba(226,35,26,0.45)]">
+          SALE
         </span>
         {product.limited ? (
           <span

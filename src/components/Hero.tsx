@@ -8,7 +8,7 @@ const DURATION = 4200;
 
 const deck = [
   {
-    kicker: "Sale live · Save 36%",
+    kicker: "Sale live · FLAT ₹6,999",
     headline: ["Your Next Goal", "Starts Here."],
     copy: "Elite silos. Flat ₹6,999. Nothing held back.",
     slug: "adidas-f50-elite-fg-celestial-victory-pack",
@@ -26,9 +26,9 @@ const deck = [
     slug: "adidas-f50-messi-el-ltimo-tango",
   },
   {
-    kicker: "Sale live · Flat ₹6,999",
+    kicker: "Sale live · FLAT ₹6,999",
     headline: ["Predator Instinct.", "Priced Flat."],
-    copy: "Every Predator silo down from ₹10,999 — while stock lasts.",
+    copy: "Every Predator silo — one flat price while stock lasts.",
     slug: "adidas-predator-elite-ft-fg",
   },
   {
@@ -100,13 +100,13 @@ export function Hero() {
                   <span className="text-bone/45">{s.headline[1]}</span>
                 </h1>
                 <p className="mt-6 max-w-sm text-base text-bone/60 md:mt-7">{s.copy}</p>
-                <div className="mt-6 flex items-baseline gap-3">
-                  <span className="display text-3xl text-accent-hot tabular-nums md:text-4xl">
+                <div className="mt-6 flex flex-wrap items-baseline gap-3">
+                  <span className="display text-4xl text-accent-hot tabular-nums md:text-5xl">
                     {fmt(PRICE)}
                   </span>
                   <MaskedMRP className="text-sm text-bone/45" />
-                  <span className="eyebrow rounded-sm bg-accent-hot px-2 py-1 text-[10px] text-accent-hot-foreground">
-                    Save 36%
+                  <span className="rounded-sm bg-accent-hot px-2.5 py-1 font-display text-[11px] font-extrabold uppercase tracking-[0.18em] text-accent-hot-foreground shadow-[0_6px_16px_-4px_rgba(226,35,26,0.45)]">
+                    SALE
                   </span>
                 </div>
                 <div className="mt-8 flex flex-wrap items-center gap-3">

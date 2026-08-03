@@ -60,8 +60,8 @@ function ProductPage() {
         <div className="mx-auto grid max-w-[1500px] gap-10 px-5 pb-16 md:grid-cols-[1.15fr_1fr] md:gap-16 md:px-10 md:pb-24">
           <div className="group relative aspect-square bg-surface-darker md:aspect-[4/5]">
             <ImageCarousel images={product.images} alt={`${product.brand} ${product.name}`} eager />
-            <span className="absolute top-0 left-0 bg-accent-hot px-3 py-1.5 text-[10px] font-semibold tracking-[0.2em] text-accent-hot-foreground">
-              -36%
+            <span className="absolute top-0 left-0 bg-accent-hot px-3 py-1.5 text-[11px] font-extrabold tracking-[0.16em] text-accent-hot-foreground shadow-[0_6px_16px_-4px_rgba(226,35,26,0.45)]">
+              SALE
             </span>
             {product.limited ? (
               <span className="absolute top-0 right-0 bg-bone px-3 py-1.5 text-[10px] font-semibold tracking-[0.2em] text-ink">
