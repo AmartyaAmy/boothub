@@ -13,7 +13,7 @@ export function SaleBanner() {
           <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-current" />
         </span>
         <span className="eyebrow text-[10px] md:text-[11px]">
-          Sale live — flat ₹6,999 <span className="opacity-60 line-through">₹10,999</span>
+          Sale live — flat ₹6,999 <span className="opacity-60 line-through">XXXXX</span>
           <span className="hidden md:inline"> · save 36% on every pair</span>
         </span>
         <span className="eyebrow text-[10px] md:text-[11px]">Ends: soon</span>

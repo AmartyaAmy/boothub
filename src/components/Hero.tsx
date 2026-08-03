@@ -103,7 +103,7 @@ export function Hero() {
                   <span className="display text-3xl text-accent-hot tabular-nums md:text-4xl">
                     {fmt(PRICE)}
                   </span>
-                  <span className="text-sm text-bone/45 line-through tabular-nums">{fmt(MRP)}</span>
+                  <span className="text-sm text-bone/45 line-through tabular-nums">XXXXX</span>
                   <span className="eyebrow rounded-sm bg-accent-hot px-2 py-1 text-[10px] text-accent-hot-foreground">
                     Save 36%
                   </span>
