@@ -13,7 +13,7 @@ export function Price({ large = false }: { large?: boolean }) {
       <span
         className={`${large ? "text-base" : "text-xs"} text-muted-foreground line-through tabular-nums`}
       >
-        {fmt(MRP)}
+        XXXXX
       </span>
       <span
         className={`eyebrow rounded-sm bg-accent-hot/10 px-1.5 py-0.5 text-accent-hot ${
