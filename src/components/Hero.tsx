@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { products, MRP, PRICE } from "@/data/products";
+import { products, PRICE } from "@/data/products";
+import { MaskedMRP } from "@/components/MaskedMRP";
 import { BootBadge } from "./Logo";
 
 const DURATION = 4200;
@@ -103,7 +104,7 @@ export function Hero() {
                   <span className="display text-3xl text-accent-hot tabular-nums md:text-4xl">
                     {fmt(PRICE)}
                   </span>
-                  <span className="text-sm text-bone/45 line-through tabular-nums">XXXXX</span>
+                  <MaskedMRP className="text-sm text-bone/45" />
                   <span className="eyebrow rounded-sm bg-accent-hot px-2 py-1 text-[10px] text-accent-hot-foreground">
                     Save 36%
                   </span>
