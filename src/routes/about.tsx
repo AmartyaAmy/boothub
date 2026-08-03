@@ -27,7 +27,7 @@ export const Route = createFileRoute("/about")({
   component: About,
 });
 
-const stats = [
+const stats: [string, string][] = [
   ["2,400+", "Pairs shipped"],
   ["4.8", "Average rating"],
   ["26", "Silos in stock"],
