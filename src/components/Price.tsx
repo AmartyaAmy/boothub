@@ -1,5 +1,4 @@
 import { PRICE } from "@/data/products";
-import { MaskedMRP } from "./MaskedMRP";
 
 const fmt = (n: number) => `₹${n.toLocaleString("en-IN")}`;
 
@@ -11,9 +10,6 @@ export function Price({ large = false }: { large?: boolean }) {
       >
         {fmt(PRICE)}
       </span>
-      <MaskedMRP
-        className={`${large ? "text-base" : "text-xs"} text-muted-foreground`}
-      />
       <span
         className={`rounded-sm bg-accent-hot px-1.5 py-0.5 font-display font-extrabold uppercase tracking-widest text-accent-hot-foreground shadow-sm ${
           large ? "text-[11px]" : "text-[10px]"
