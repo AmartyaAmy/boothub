@@ -101,10 +101,9 @@ export function Hero() {
                 </h1>
                 <p className="mt-6 max-w-sm text-base text-bone/60 md:mt-7">{s.copy}</p>
                 <div className="mt-6 flex flex-wrap items-baseline gap-3">
-                  <span className="display text-4xl text-accent-hot tabular-nums md:text-5xl">
+                  <span className="display text-4xl font-black text-accent-hot tabular-nums md:text-5xl drop-shadow-[0_2px_12px_rgba(226,35,26,0.35)]">
                     {fmt(PRICE)}
                   </span>
-                  <MaskedMRP className="text-sm text-bone/45" />
                   <span className="rounded-sm bg-accent-hot px-2.5 py-1 font-display text-[11px] font-extrabold uppercase tracking-[0.18em] text-accent-hot-foreground shadow-[0_6px_16px_-4px_rgba(226,35,26,0.45)]">
                     SALE
                   </span>
