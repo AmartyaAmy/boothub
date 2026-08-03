@@ -17,7 +17,7 @@ export function SaleTicker() {
               <li key={`${dup}-${i}`} className="flex items-center">
                 <span
                   className={`eyebrow px-6 ${
-                    label.startsWith("SALE") || label.startsWith("WAS")
+                    label.includes("₹6,999") || label.startsWith("SALE")
                       ? "text-accent-hot"
                       : "text-bone/70"
                   }`}

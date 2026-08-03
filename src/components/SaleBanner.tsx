@@ -13,7 +13,10 @@ export function SaleBanner() {
           <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-current" />
         </span>
         <span className="font-display text-[11px] font-extrabold uppercase tracking-[0.18em] md:text-xs">
-          Sale live — flat ₹6,999
+          Sale live — flat{" "}
+          <span className="rounded-sm bg-accent-hot-foreground px-1 py-0.5 text-accent-hot">
+            ₹6,999
+          </span>
         </span>
         <span className="rounded-sm bg-accent-hot-foreground px-1.5 py-0.5 text-[10px] font-extrabold uppercase tracking-widest text-accent-hot md:text-[11px]">
           Ends soon

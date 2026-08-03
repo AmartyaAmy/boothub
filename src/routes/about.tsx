@@ -27,7 +27,7 @@ export const Route = createFileRoute("/about")({
   component: About,
 });
 
-const stats = [
+const stats: [string, string][] = [
   ["2,400+", "Pairs shipped"],
   ["4.8", "Average rating"],
   ["26", "Silos in stock"],
@@ -78,7 +78,9 @@ function About() {
         <ul className="mt-20 grid grid-cols-2 gap-px border border-hairline bg-hairline md:grid-cols-4">
           {stats.map(([value, label], i) => (
             <Reveal as="li" key={label} delay={i * 80} className="bg-background p-8">
-              <p className="display text-4xl md:text-5xl">{value}</p>
+              <p className={`display text-4xl md:text-5xl ${value.includes("₹6,999") ? "text-accent-hot" : ""}`}>
+                {value}
+              </p>
               <p className="eyebrow mt-3 text-muted-foreground">{label}</p>
             </Reveal>
           ))}
