@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { products, PRICE } from "@/data/products";
-import { MaskedMRP } from "@/components/MaskedMRP";
 import { BootBadge } from "./Logo";
 
 const DURATION = 4200;
