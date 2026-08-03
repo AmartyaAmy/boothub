@@ -38,8 +38,8 @@ function Limited() {
               Limited edition.
             </h1>
             <p className="mt-8 max-w-xl text-base text-bone/60">
-              Player signatures and named packs — single-run stock, no restocks promised. Same flat
-              ₹6,999, same COD and 7-day exchange.
+              Player signatures and named packs — single-run stock, no restocks promised. Same flat{" "}
+              <span className="text-accent-hot">₹6,999</span>, same COD and 7-day exchange.
             </p>
           </div>
         </section>
