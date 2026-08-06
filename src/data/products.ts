@@ -612,7 +612,7 @@ export const products: Product[] = [
   },
   {
     id: 113,
-    slug: "adidas-predator-elite-ft-fg",
+    slug: "adidas-predator-elite-ft-fg-2",
     brand: "Adidas",
     name: "Predator Elite FT FG",
     subtitle: "",
