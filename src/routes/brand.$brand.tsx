@@ -8,6 +8,7 @@ import { byBrand } from "@/data/products";
 const BRANDS: Record<string, { name: string; line: string }> = {
   nike: { name: "Nike", line: "Mercurial speed silos built for the last yard." },
   adidas: { name: "Adidas", line: "F50 and Predator — control, or pure acceleration." },
+  puma: { name: "Puma", line: "Future and Ultra — plush touch, brutal top speed." },
 };
 
 export const Route = createFileRoute("/brand/$brand")({
@@ -44,7 +45,7 @@ function BrandPage() {
     <SiteLayout>
       <PageHeader eyebrow="Shop by brand" title={name} intro={line} />
       <SaleTicker />
-      <ProductGrid items={byBrand(key)} />
+      <ProductGrid items={byBrand(key)} lockBrand={BRANDS[key]!.name as never} />
       <TrustBar />
     </SiteLayout>
   );
