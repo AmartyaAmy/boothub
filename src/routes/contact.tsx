@@ -1,23 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
-import { IconInstagram, IconWhatsapp } from "@/components/Icons";
+import { IconInstagram } from "@/components/Icons";
 import { BootBadge } from "@/components/Logo";
-import { INSTAGRAM_URL, PHONE_DISPLAY, PHONE_HREF } from "@/data/products";
+import { INSTAGRAM_URL } from "@/data/products";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact BootHub — Call or DM Us" },
+      { title: "Contact BootHub — DM Us on Instagram" },
       {
         name: "description",
         content:
-          "Reach BootHub on +91 97599 90999, WhatsApp or Instagram @bootshub_1 for sizing help, order status and COD queries.",
+          "Reach BootHub on Instagram @bootshub_1 for sizing help, order status and COD queries.",
       },
       { property: "og:title", content: "Contact BootHub" },
       {
         property: "og:description",
-        content: "Call +91 97599 90999 or DM @bootshub_1 — we reply fast.",
+        content: "DM @bootshub_1 — we reply fast.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -43,15 +43,7 @@ function Contact() {
             </p>
           </div>
 
-          <div className="mt-16 grid gap-4 md:grid-cols-3">
-            <a
-              href={PHONE_HREF}
-              className="border border-hairline-invert p-8 transition-colors hover:border-bone"
-            >
-              <p className="eyebrow text-bone/40">Call / tap to dial</p>
-              <p className="mt-4 text-xl font-semibold text-bone tabular-nums">{PHONE_DISPLAY}</p>
-              <p className="mt-2 text-sm text-bone/50">Mon–Sat, 10am–8pm IST</p>
-            </a>
+          <div className="mx-auto mt-16 grid max-w-xl gap-4">
             <a
               href={INSTAGRAM_URL}
               target="_blank"
@@ -62,19 +54,9 @@ function Contact() {
                 <IconInstagram />
               </span>
               <p className="mt-4 text-xl font-semibold text-bone">@bootshub_1</p>
-              <p className="mt-2 text-sm text-bone/50">Contact us on Instagram</p>
-            </a>
-            <a
-              href="https://wa.me/919759990999"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="border border-hairline-invert p-8 transition-colors hover:border-bone"
-            >
-              <span className="block h-6 w-6 text-bone">
-                <IconWhatsapp />
-              </span>
-              <p className="mt-4 text-xl font-semibold text-bone">WhatsApp</p>
-              <p className="mt-2 text-sm text-bone/50">Share your size, get a link</p>
+              <p className="mt-2 text-sm text-bone/50">
+                DM us on Instagram — sizing, stock and COD, Mon–Sat 10am–8pm IST
+              </p>
             </a>
           </div>
 
