@@ -48,6 +48,36 @@ const deck = [
     copy: "Nike's Blueprint and Scary Good drops, in stock now.",
     slug: "nike-mercurial-vapor-16-elite-fg-blueprint-pack",
   },
+  {
+    kicker: "Turf & Trainers",
+    headline: ["Cage Ready.", "Street Sharp."],
+    copy: "Predator and Phantom turf trainers, same flat price.",
+    slug: "adidas-predator-league-tf",
+  },
+  {
+    kicker: "Sale live · FLAT ₹6,999",
+    headline: ["Tiempo Touch.", "Elite Feel."],
+    copy: "Leather-soft Tiempo Legend 10 Elite, firm ground.",
+    slug: "nike-tiempo-legend-10-elite-fg",
+  },
+  {
+    kicker: "Messi Series",
+    headline: ["Low To The Ground.", "Impossible To Mark."],
+    copy: "Adidas Crazyfast Messi edition — in stock now.",
+    slug: "adidas-crazyfast-messi-edition",
+  },
+  {
+    kicker: "Speed Pack",
+    headline: ["Air Zoom.", "Full Send."],
+    copy: "Mercurial Vapor 15 Air Zoom, built for the break.",
+    slug: "nike-mercurial-vapor-15-air-zoom",
+  },
+  {
+    kicker: "Predator Series",
+    headline: ["Strike First.", "Strike Hard."],
+    copy: "Predator Freak Green edition, sale priced.",
+    slug: "adidas-predator-freak-green-edition",
+  },
 ];
 
 const slides = deck.filter((s) => products.some((p) => p.slug === s.slug));
