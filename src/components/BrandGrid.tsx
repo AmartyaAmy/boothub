@@ -6,6 +6,7 @@ import { IconArrow } from "./Icons";
 const brands = [
   { name: "Adidas", slug: "adidas", line: "F50 · Predator", dark: true },
   { name: "Nike", slug: "nike", line: "Mercurial · Superfly", dark: false },
+  { name: "Puma", slug: "puma", line: "Future · Ultra", dark: true },
 ];
 
 export function BrandGrid() {
@@ -24,7 +25,7 @@ export function BrandGrid() {
         </Link>
       </Reveal>
 
-      <div className="mt-12 grid gap-4 md:grid-cols-2 md:gap-6">
+      <div className="mt-12 grid gap-4 md:grid-cols-3 md:gap-6">
         {brands.map((b, i) => {
           const items = byBrand(b.slug);
           const hero = (items.find((p) => !p.limited) ?? items[0])!;
