@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { INSTAGRAM_URL, PHONE_DISPLAY, PHONE_HREF } from "@/data/products";
+import { INSTAGRAM_URL } from "@/data/products";
 import { Wordmark } from "./Logo";
-import { IconInstagram, IconWhatsapp } from "./Icons";
+import { IconInstagram } from "./Icons";
 
 const cols = [
   {
@@ -53,22 +53,7 @@ export function Footer() {
               >
                 <IconInstagram />
               </a>
-              <a
-                href="https://wa.me/919759990999"
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label="BootHub on WhatsApp"
-                className="h-6 w-6 text-bone/60 transition-colors hover:text-bone"
-              >
-                <IconWhatsapp />
-              </a>
             </div>
-            <a
-              href={PHONE_HREF}
-              className="mt-7 block text-sm font-semibold text-bone tabular-nums hover:text-accent-hot"
-            >
-              {PHONE_DISPLAY}
-            </a>
           </div>
 
           {cols.map((col) => (
@@ -94,7 +79,18 @@ export function Footer() {
 
         <div className="mt-16 flex flex-col gap-3 border-t border-hairline-invert pt-8 text-xs text-bone/40 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} BootHub. All rights reserved.</p>
-          <p className="text-[10px] text-bone/30">Built by Socialyt and co.</p>
+          <p className="text-xs text-bone/45">
+            Built by{" "}
+            <a
+              href="https://www.socialyt.in"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="font-semibold text-bone/70 underline decoration-hairline-invert underline-offset-4 transition-colors hover:text-accent-hot"
+            >
+              Socialyt
+            </a>{" "}
+            and co.
+          </p>
         </div>
       </div>
     </footer>

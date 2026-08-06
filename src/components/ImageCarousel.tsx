@@ -52,8 +52,9 @@ export function ImageCarousel({
           src={src}
           alt={i === 0 ? alt : `${alt} — view ${i + 1}`}
           loading={eager && i === 0 ? "eager" : "lazy"}
-          className="absolute inset-0 h-full w-full object-contain transition-all duration-700 ease-out"
-          style={{ opacity: i === index ? 1 : 0 }}
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-contain transition-opacity duration-700 ease-out"
+          style={{ opacity: i === index ? 1 : 0, transform: "translateZ(0)" }}
         />
       ))}
 

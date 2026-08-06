@@ -13,7 +13,7 @@ export const Route = createFileRoute("/shop")({
       {
         name: "description",
         content:
-          "Browse every Nike and Adidas boot at BootHub. One price: ₹6,999. Sizes UK 6-12, COD available, free shipping across India.",
+          "Browse every Nike, Adidas and Puma boot at BootHub. One price: ₹6,999. Sizes UK 6-12, COD available, free shipping across India.",
       },
       { property: "og:title", content: "Shop All Boots — BootHub" },
       {
@@ -33,7 +33,7 @@ function Shop() {
       <PageHeader
         eyebrow="The full rack"
         title="Every pair. One price."
-        intro="Nike and Adidas elite silos, flat ₹6,999 in UK 6 to 12. Filter by size, tap a pair for the full spec."
+        intro="Nike, Adidas and Puma elite silos, flat ₹6,999 in UK 6 to 12. Filter by brand, studs or turf, tap a pair for the full spec."
       />
       <SaleTicker />
       <ProductGrid items={products} />

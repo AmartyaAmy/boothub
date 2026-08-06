@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader, SiteLayout } from "@/components/SiteLayout";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/data/products";
+import { INSTAGRAM_URL } from "@/data/products";
 
 export const Route = createFileRoute("/policies")({
   head: () => ({
@@ -78,9 +78,14 @@ function Policies() {
           </div>
         ))}
         <p className="border-t border-hairline pt-12 text-sm text-muted-foreground">
-          Questions? Call{" "}
-          <a href={PHONE_HREF} className="font-semibold text-foreground hover:text-accent-hot">
-            {PHONE_DISPLAY}
+          Questions? DM us{" "}
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="font-semibold text-foreground hover:text-accent-hot"
+          >
+            @bootshub_1
           </a>
           .
         </p>

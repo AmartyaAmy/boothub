@@ -6,7 +6,7 @@ import { Price } from "@/components/Price";
 import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
 import { IconCash, IconIndia, IconReturn, IconShip } from "@/components/Icons";
-import { INSTAGRAM_URL, PHONE_DISPLAY, PHONE_HREF, getProduct, products } from "@/data/products";
+import { INSTAGRAM_URL, getProduct, products } from "@/data/products";
 
 export const Route = createFileRoute("/boots/$slug")({
   loader: ({ params }) => {
@@ -100,21 +100,7 @@ function ProductPage() {
               >
                 BUY NOW ON INSTAGRAM
               </a>
-              <a
-                href="https://wa.me/919759990999"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="flex-1 rounded-full border border-hairline-invert px-8 py-4 text-center text-[11px] font-semibold tracking-[0.22em] text-bone transition-colors hover:border-bone"
-              >
-                ENQUIRE ON WHATSAPP
-              </a>
             </div>
-            <a
-              href={PHONE_HREF}
-              className="mt-4 block text-sm text-bone/55 transition-colors hover:text-bone"
-            >
-              Or call {PHONE_DISPLAY}
-            </a>
 
             <ul className="mt-10 grid grid-cols-2 gap-5 border-t border-hairline-invert pt-8">
               {trust.map(({ Icon, label }) => (
