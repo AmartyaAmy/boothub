@@ -14,16 +14,16 @@ import { coreProducts, limitedProducts } from "@/data/products";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "BootHub — Football Boots, Flat ₹6,999 | Nike & Adidas" },
+      { title: "BootHub — Football Boots, Flat ₹6,999 | Nike · Adidas · Puma" },
       {
         name: "description",
         content:
-          "Premium Nike and Adidas football boots at a flat ₹6,999. UK 6-12, cash on delivery, free pan-India shipping and 7-day exchange.",
+          "Premium Nike, Adidas and Puma football boots at a flat ₹6,999. UK 6-12, cash on delivery, free pan-India shipping and 7-day exchange.",
       },
       { property: "og:title", content: "BootHub — Your Next Goal Starts Here" },
       {
         property: "og:description",
-        content: "Elite Nike and Adidas boots, flat ₹6,999. COD, free shipping, 7-day exchange.",
+        content: "Elite Nike, Adidas and Puma boots, flat ₹6,999. COD, free shipping, 7-day exchange.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
