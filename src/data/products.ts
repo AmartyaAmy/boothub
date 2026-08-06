@@ -190,8 +190,6 @@ export const MRP = 10999;
 export const PRICE = 6999;
 export const INSTAGRAM_URL =
   "https://www.instagram.com/bootshub_1/?utm_source=ig_web_button_share_sheet";
-export const PHONE_DISPLAY = "+91 97599 90999";
-export const PHONE_HREF = "tel:+919759990999";
 
 export const products: Product[] = [
   {
