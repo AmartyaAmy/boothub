@@ -47,7 +47,7 @@ export function Footer() {
               <a
                 href={INSTAGRAM_URL}
                 target="_blank"
-                rel="noreferrer noopener"
+                rel="noopener noreferrer"
                 aria-label="BootHub on Instagram"
                 className="h-6 w-6 text-bone/60 transition-colors hover:text-bone"
               >
@@ -84,7 +84,7 @@ export function Footer() {
             <a
               href="https://www.socialyt.in"
               target="_blank"
-              rel="noreferrer noopener"
+              rel="noopener noreferrer"
               className="font-semibold text-bone/70 underline decoration-hairline-invert underline-offset-4 transition-colors hover:text-accent-hot"
             >
               Socialyt

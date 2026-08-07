@@ -82,7 +82,7 @@ function Policies() {
           <a
             href={INSTAGRAM_URL}
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noopener noreferrer"
             className="font-semibold text-foreground hover:text-accent-hot"
           >
             @bootshub_1

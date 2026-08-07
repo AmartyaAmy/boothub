@@ -19,7 +19,7 @@ export function InstagramCTA() {
           <a
             href={INSTAGRAM_URL}
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noopener noreferrer"
             className="mt-9 inline-flex items-center gap-3 rounded-full bg-bone px-8 py-4 text-[11px] font-semibold tracking-[0.22em] text-ink transition-colors hover:bg-accent-hot hover:text-accent-hot-foreground"
           >
             <span className="h-4 w-4">
