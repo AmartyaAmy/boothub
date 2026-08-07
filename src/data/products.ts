@@ -155,33 +155,24 @@ import sh_puma_future_ultimate_fg from "@/assets/shoes/puma-future-ultimate-fg.j
 import sh_puma_future_ultimate_fg_red_edition from "@/assets/shoes/puma-future-ultimate-fg-red-edition.jpeg.asset.json";
 import sh_puma_ultra_5_ultimate_volume_up_fg from "@/assets/shoes/puma-ultra-5-ultimate-volume-up-fg.jpeg.asset.json";
 import sh_puma_ultra_ultimate_fg from "@/assets/shoes/puma-ultra-ultimate-fg.jpeg.asset.json";
+import sh_new_nike_tiempo_legend_8_elite_sg_red from "@/assets/shoes/nike-tiempo-legend-8-elite-sg-red.jpeg.asset.json";
+import sh_new_nike_mercurial_vapor_14_elite_sg_blueprint_white from "@/assets/shoes/nike-mercurial-vapor-14-elite-sg-blueprint-white.jpeg.asset.json";
+import sh_new_nike_phantom_gx_elite_fg_white from "@/assets/shoes/nike-phantom-gx-elite-fg-white.jpeg.asset.json";
+import sh_new_adidas_predator_precision_limited_collection_black_pink from "@/assets/shoes/adidas-predator-precision-limited-collection-black-pink.jpeg.asset.json";
+import sh_new_mizuno_morelia_neo_sg_red from "@/assets/shoes/mizuno-morelia-neo-sg-red.jpeg.asset.json";
+import sh_new_mizuno_morelia_neo_fg_blue from "@/assets/shoes/mizuno-morelia-neo-fg-blue.jpeg.asset.json";
 
-export type Section = "Studs" | "Trainers";
-export type Ground = "FG" | "AG" | "SG" | "TF";
-export type Brand = "Nike" | "Adidas" | "Puma";
+export type Brand = "Nike" | "Adidas" | "Puma" | "Mizuno";
 
-export const BRANDS: Brand[] = ["Nike", "Adidas", "Puma"];
-export const SECTIONS: Section[] = ["Studs", "Trainers"];
-export const GROUNDS_BY_SECTION: Record<Section, Ground[]> = {
-  Studs: ["FG", "AG", "SG"],
-  Trainers: ["TF"],
-};
-export const GROUND_LABELS: Record<Ground, string> = {
-  FG: "FG — Firm Ground",
-  AG: "AG — Artificial Ground",
-  SG: "SG — Soft Ground",
-  TF: "TF — Turf",
-};
+export const BRANDS: Brand[] = ["Nike", "Adidas", "Puma", "Mizuno"];
 
 export type Product = {
   id: number;
   slug: string;
-  brand: "Adidas" | "Nike" | "Puma";
+  brand: Brand;
   name: string;
   subtitle: string;
   limited: boolean;
-  section: Section;
-  ground: Ground;
   images: string[];
 };
 
@@ -189,7 +180,7 @@ export const SIZES = [6, 7, 8, 9, 10, 11, 12] as const;
 export const MRP = 10999;
 export const PRICE = 6999;
 export const INSTAGRAM_URL =
-  "https://www.instagram.com/bootshub_1/?utm_source=ig_web_button_share_sheet";
+  "https://www.instagram.com/boothub_store/?utm_source=ig_web_button_share_sheet";
 
 export const products: Product[] = [
   {
@@ -199,8 +190,6 @@ export const products: Product[] = [
     name: "F50 Elite Laceless",
     subtitle: "White / Turquoise",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Core_01_Adidas_F50_Elite_Laceless_soccer_cleats_in_a_white_and_turqu_photo_1_png.url],
   },
   {
@@ -210,8 +199,6 @@ export const products: Product[] = [
     name: "F50 Elite FG",
     subtitle: "Celestial Victory Pack",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Limited_02_Adidas_F50_Elite_FG_football_boots_Celestial_Victory_pack_bl_photo_1_png.url],
   },
   {
@@ -221,8 +208,6 @@ export const products: Product[] = [
     name: "F50 League FG/MG",
     subtitle: "Stealth Victory Pack",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Limited_03_Adidas_F50_League_FG_MG_football_boots_Stealth_Victory_pack_photo_1_png.url],
   },
   {
@@ -232,8 +217,6 @@ export const products: Product[] = [
     name: "F50 Elite Laceless FG",
     subtitle: "Road to Glory",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Limited_04_Adidas_F50_Elite_Laceless_FG_Road_to_Glory_white_black_gold_photo_1_png.url],
   },
   {
@@ -243,8 +226,6 @@ export const products: Product[] = [
     name: "Predator Club",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Core_05_Adidas_Predator_Club_football_boots_photo_1_png.url],
   },
   {
@@ -254,8 +235,6 @@ export const products: Product[] = [
     name: "F50 Hyperfast EVO FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Core_06_Adidas_F50_Hyperfast_EVO_FG_soccer_cleats_photo_1_png.url],
   },
   {
@@ -265,8 +244,6 @@ export const products: Product[] = [
     name: "Predator Elite",
     subtitle: "Jude Bellingham",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Limited_07_Adidas_Predator_Elite_Jude_Bellingham_signature_boots_photo_1_png.url],
   },
   {
@@ -276,8 +253,6 @@ export const products: Product[] = [
     name: "F50 Elite Laceless",
     subtitle: "Pink / Purple",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Core_08_Adidas_F50_Elite_Laceless_pink_and_purple_colorway_photo_1_png.url],
   },
   {
@@ -287,8 +262,6 @@ export const products: Product[] = [
     name: "Predator 30 Elite FT FG",
     subtitle: "30th Anniversary",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Limited_09_Adidas_Predator_30_Elite_FT_FG_30th_Anniversary_photo_1_png.url],
   },
   {
@@ -298,8 +271,6 @@ export const products: Product[] = [
     name: "Air Zoom Mercurial Vapor 16 Elite FG",
     subtitle: "Scary Good",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [iNike_Limited_10_Nike_Air_Zoom_Mercurial_Vapor_16_Elite_FG_Scary_Good_photo_1_png.url],
   },
   {
@@ -309,8 +280,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor 16 Elite FG",
     subtitle: "Blueprint Pack",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [iNike_Limited_11_Nike_Mercurial_Vapor_16_Elite_FG_Blueprint_Pack_photo_1_png.url],
   },
   {
@@ -320,8 +289,6 @@ export const products: Product[] = [
     name: "F50 Elite",
     subtitle: "Lamine Yamal",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Limited_12_Adidas_F50_Elite_Lamine_Yamal_edition_laces_photo_1_png.url],
   },
   {
@@ -331,8 +298,6 @@ export const products: Product[] = [
     name: "F50 Elite Laceless FG",
     subtitle: "Heartbreaker",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Limited_13_Adidas_F50_Elite_Laceless_FG_Heartbreaker_collection_photo_1_png.url],
   },
   {
@@ -342,8 +307,6 @@ export const products: Product[] = [
     name: "Predator Pro Fold-Over Tongue",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Core_14_Adidas_Predator_Pro_Fold_Over_Tongue_football_cleats_photo_1_png.url],
   },
   {
@@ -353,8 +316,6 @@ export const products: Product[] = [
     name: "F50 Messi",
     subtitle: "El Último Tango",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Limited_15_Adidas_F50_Messi_El_Ultimo_Tango_photo_1_png.url, iAdidas_Limited_15_Adidas_F50_Messi_El_Ultimo_Tango_photo_2_jpeg.url],
   },
   {
@@ -364,8 +325,6 @@ export const products: Product[] = [
     name: "Predator Elite",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Core_16_Adidas_Predator_Elite_football_boots_photo_1_png.url],
   },
   {
@@ -375,8 +334,6 @@ export const products: Product[] = [
     name: "Predator Elite",
     subtitle: "Soccer Cleats",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Core_17_Adidas_Predator_Elite_soccer_cleats_photo_1_png.url],
   },
   {
@@ -386,8 +343,6 @@ export const products: Product[] = [
     name: "F50 Hyperfast Elite Laceless FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Core_18_Adidas_F50_Hyperfast_Elite_Laceless_FG_soccer_cleats_photo_1_png.url],
   },
   {
@@ -397,8 +352,6 @@ export const products: Product[] = [
     name: "Predator Elite FT FG",
     subtitle: "David Beckham",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Limited_19_Adidas_Predator_Elite_FT_FG_David_Beckham_edition_photo_1_png.url],
   },
   {
@@ -408,8 +361,6 @@ export const products: Product[] = [
     name: "Predator",
     subtitle: "Navy / Gold",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Core_20_Adidas_Predator_football_shoes_navy_blue_and_gold_photo_1_jpeg.url],
   },
   {
@@ -419,8 +370,6 @@ export const products: Product[] = [
     name: "F50 Elite FG",
     subtitle: "Blue / Black",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Core_21_Adidas_F50_Elite_FG_football_boots_blue_and_black_colorway_photo_1_jpeg.url],
   },
   {
@@ -430,8 +379,6 @@ export const products: Product[] = [
     name: "Predator Elite FT FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Core_22_Adidas_Predator_Elite_FT_FG_photo_1_jpeg.url, iAdidas_Core_22_Adidas_Predator_Elite_FT_FG_photo_2_jpeg.url, iAdidas_Core_22_Adidas_Predator_Elite_FT_FG_photo_3_jpeg.url, iAdidas_Core_22_Adidas_Predator_Elite_FT_FG_photo_4_jpeg.url],
   },
   {
@@ -441,8 +388,6 @@ export const products: Product[] = [
     name: "Predator Elite",
     subtitle: "Fold-Over Tongue",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Core_23_Adidas_Predator_Elite_Fold_Over_Tongue_photo_1_jpeg.url, iAdidas_Core_23_Adidas_Predator_Elite_Fold_Over_Tongue_photo_2_jpeg.url, iAdidas_Core_23_Adidas_Predator_Elite_Fold_Over_Tongue_photo_3_jpeg.url, iAdidas_Core_23_Adidas_Predator_Elite_Fold_Over_Tongue_photo_4_jpeg.url, iAdidas_Core_23_Adidas_Predator_Elite_Fold_Over_Tongue_photo_5_jpeg.url],
   },
   {
@@ -452,8 +397,6 @@ export const products: Product[] = [
     name: "Mercurial Superfly 10 Elite",
     subtitle: "Kylian Mbappé",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [iNike_Limited_24_Nike_Mercurial_Superfly_10_Elite_Kylian_Mbappe_edition_photo_1_jpeg.url, iNike_Limited_24_Nike_Mercurial_Superfly_10_Elite_Kylian_Mbappe_edition_photo_2_jpeg.url, iNike_Limited_24_Nike_Mercurial_Superfly_10_Elite_Kylian_Mbappe_edition_photo_3_jpeg.url, iNike_Limited_24_Nike_Mercurial_Superfly_10_Elite_Kylian_Mbappe_edition_photo_4_jpeg.url, iNike_Limited_24_Nike_Mercurial_Superfly_10_Elite_Kylian_Mbappe_edition_photo_5_jpeg.url],
   },
   {
@@ -463,8 +406,6 @@ export const products: Product[] = [
     name: "F50 Elite",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [iAdidas_Core_25_Adidas_F50_Elite_football_boots_photo_1_jpeg.url, iAdidas_Core_25_Adidas_F50_Elite_football_boots_photo_2_jpeg.url, iAdidas_Core_25_Adidas_F50_Elite_football_boots_photo_3_jpeg.url, iAdidas_Core_25_Adidas_F50_Elite_football_boots_photo_4_jpeg.url],
   },
   {
@@ -474,8 +415,6 @@ export const products: Product[] = [
     name: "Zoom Mercurial Vapor 15 Elite",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [iNike_Core_26_Nike_Zoom_Mercurial_Vapor_15_Elite_photo_1_jpeg.url, iNike_Core_26_Nike_Zoom_Mercurial_Vapor_15_Elite_photo_2_jpeg.url, iNike_Core_26_Nike_Zoom_Mercurial_Vapor_15_Elite_photo_3_jpeg.url, iNike_Core_26_Nike_Zoom_Mercurial_Vapor_15_Elite_photo_4_jpeg.url, iNike_Core_26_Nike_Zoom_Mercurial_Vapor_15_Elite_photo_5_jpeg.url, iNike_Core_26_Nike_Zoom_Mercurial_Vapor_15_Elite_photo_6_png.url],
   },
   {
@@ -485,8 +424,6 @@ export const products: Product[] = [
     name: "11Pro Tony Kroos FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_11pro_tony_kroos_fg.url],
   },
   {
@@ -496,8 +433,6 @@ export const products: Product[] = [
     name: "Crazyfast Blue Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_crazyfast_blue_edition.url],
   },
   {
@@ -507,8 +442,6 @@ export const products: Product[] = [
     name: "Crazyfast Messi Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_crazyfast_messi_edition.url],
   },
   {
@@ -518,8 +451,6 @@ export const products: Product[] = [
     name: "Crazyfast Red Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_crazyfast_red_edition.url],
   },
   {
@@ -529,8 +460,6 @@ export const products: Product[] = [
     name: "F50",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_f50.url],
   },
   {
@@ -540,8 +469,6 @@ export const products: Product[] = [
     name: "F50 (bag/box shot)",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_f50_bag_box_shot.url],
   },
   {
@@ -551,8 +478,6 @@ export const products: Product[] = [
     name: "F50 Black Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_f50_black_edition.url],
   },
   {
@@ -562,8 +487,6 @@ export const products: Product[] = [
     name: "F50 Elite FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_f50_elite_fg.url],
   },
   {
@@ -573,8 +496,6 @@ export const products: Product[] = [
     name: "F50 (Pink Limited Edition)",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_f50_pink_limited_edition.url],
   },
   {
@@ -584,8 +505,6 @@ export const products: Product[] = [
     name: "Predator",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_predator.url],
   },
   {
@@ -595,8 +514,6 @@ export const products: Product[] = [
     name: "Predator 2025 Champagne Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_predator_2025_champagne_edition.url],
   },
   {
@@ -606,8 +523,6 @@ export const products: Product[] = [
     name: "Predator Beckham Limited Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_predator_beckham_limited_edition.url],
   },
   {
@@ -617,8 +532,6 @@ export const products: Product[] = [
     name: "Predator Elite FT FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_predator_elite_ft_fg.url],
   },
   {
@@ -628,8 +541,6 @@ export const products: Product[] = [
     name: "Predator Freak Dark Purple Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_predator_freak_dark_purple_edition.url],
   },
   {
@@ -639,8 +550,6 @@ export const products: Product[] = [
     name: "Predator Freak Elite FG Purple Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_predator_freak_elite_fg_purple_edition.url],
   },
   {
@@ -650,8 +559,6 @@ export const products: Product[] = [
     name: "Predator Freak Green Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_predator_freak_green_edition.url],
   },
   {
@@ -661,8 +568,6 @@ export const products: Product[] = [
     name: "Predator Freak Grey Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_predator_freak_grey_edition.url],
   },
   {
@@ -672,8 +577,6 @@ export const products: Product[] = [
     name: "X Crazyfast+ FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_x_crazyfast_fg.url],
   },
   {
@@ -683,8 +586,6 @@ export const products: Product[] = [
     name: "X Speedportal",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_adidas_x_speedportal.url],
   },
   {
@@ -694,8 +595,6 @@ export const products: Product[] = [
     name: "F50 Elite Laceless TF",
     subtitle: "",
     limited: false,
-    section: "Trainers",
-    ground: "TF",
     images: [sh_adidas_f50_elite_laceless_tf.url],
   },
   {
@@ -705,8 +604,6 @@ export const products: Product[] = [
     name: "F50 League TF",
     subtitle: "",
     limited: false,
-    section: "Trainers",
-    ground: "TF",
     images: [sh_adidas_f50_league_tf.url],
   },
   {
@@ -716,8 +613,6 @@ export const products: Product[] = [
     name: "F50 League Turf",
     subtitle: "",
     limited: false,
-    section: "Trainers",
-    ground: "TF",
     images: [sh_adidas_f50_league_turf.url],
   },
   {
@@ -727,8 +622,6 @@ export const products: Product[] = [
     name: "F50 League Turf",
     subtitle: "",
     limited: false,
-    section: "Trainers",
-    ground: "TF",
     images: [sh_adidas_f50_league_turf_2.url],
   },
   {
@@ -738,8 +631,6 @@ export const products: Product[] = [
     name: "F50 TF",
     subtitle: "",
     limited: false,
-    section: "Trainers",
-    ground: "TF",
     images: [sh_adidas_f50_tf.url],
   },
   {
@@ -749,8 +640,6 @@ export const products: Product[] = [
     name: "F50 TF with Lace",
     subtitle: "",
     limited: false,
-    section: "Trainers",
-    ground: "TF",
     images: [sh_adidas_f50_tf_with_lace.url],
   },
   {
@@ -760,8 +649,6 @@ export const products: Product[] = [
     name: "Predator League TF",
     subtitle: "",
     limited: false,
-    section: "Trainers",
-    ground: "TF",
     images: [sh_adidas_predator_league_tf.url],
   },
   {
@@ -771,8 +658,6 @@ export const products: Product[] = [
     name: "Predator TF",
     subtitle: "",
     limited: false,
-    section: "Trainers",
-    ground: "TF",
     images: [sh_adidas_predator_tf.url],
   },
   {
@@ -782,8 +667,6 @@ export const products: Product[] = [
     name: "Air Zoom Mercurial Superfly 9 Elite",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_air_zoom_mercurial_superfly_9_elite.url],
   },
   {
@@ -793,8 +676,6 @@ export const products: Product[] = [
     name: "Air Zoom Mercurial Vapor",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_air_zoom_mercurial_vapor.url],
   },
   {
@@ -804,8 +685,6 @@ export const products: Product[] = [
     name: "Air Zoom Mercurial Vapor 15 Elite",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_air_zoom_mercurial_vapor_15_elite.url],
   },
   {
@@ -815,8 +694,6 @@ export const products: Product[] = [
     name: "Air Zoom Mercurial Vapor 16",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_air_zoom_mercurial_vapor_16.url],
   },
   {
@@ -826,8 +703,6 @@ export const products: Product[] = [
     name: "Air Zoom Mercurial Vapor 16 Elite FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_air_zoom_mercurial_vapor_16_elite_fg.url],
   },
   {
@@ -837,8 +712,6 @@ export const products: Product[] = [
     name: "Air Zoom Mercurial Vapor XV",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_air_zoom_mercurial_vapor_xv.url],
   },
   {
@@ -848,8 +721,6 @@ export const products: Product[] = [
     name: "Air Zoom Superfly",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_air_zoom_superfly.url],
   },
   {
@@ -859,8 +730,6 @@ export const products: Product[] = [
     name: "AZMV 040B",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_azmv_040b.url],
   },
   {
@@ -870,8 +739,6 @@ export const products: Product[] = [
     name: "Gripknit Phantom GX Elite",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_gripknit_phantom_gx_elite.url],
   },
   {
@@ -881,8 +748,6 @@ export const products: Product[] = [
     name: "Hypervenom",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_hypervenom.url],
   },
   {
@@ -892,8 +757,6 @@ export const products: Product[] = [
     name: "Hypervenom Liquid Diamond Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_hypervenom_liquid_diamond_edition.url],
   },
   {
@@ -903,8 +766,6 @@ export const products: Product[] = [
     name: "Hypervenom Phantom RGN SE",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_hypervenom_phantom_rgn_se.url],
   },
   {
@@ -914,8 +775,6 @@ export const products: Product[] = [
     name: "Hypervenom Phatal FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_hypervenom_phatal_fg.url],
   },
   {
@@ -925,8 +784,6 @@ export const products: Product[] = [
     name: "Hypervenom Phatal II FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_hypervenom_phatal_ii_fg.url],
   },
   {
@@ -936,8 +793,6 @@ export const products: Product[] = [
     name: "Hypervenom Phinish II",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_hypervenom_phinish_ii.url],
   },
   {
@@ -947,8 +802,6 @@ export const products: Product[] = [
     name: "Mercurial Air Zoom",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_air_zoom.url],
   },
   {
@@ -958,8 +811,6 @@ export const products: Product[] = [
     name: "Mercurial Mbappe Superfly",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_mbappe_superfly.url],
   },
   {
@@ -969,8 +820,6 @@ export const products: Product[] = [
     name: "Mercurial Superfly 4 CR7",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_superfly_4_cr7.url],
   },
   {
@@ -980,8 +829,6 @@ export const products: Product[] = [
     name: "Mercurial Superfly 5",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_superfly_5.url],
   },
   {
@@ -991,8 +838,6 @@ export const products: Product[] = [
     name: "Mercurial Superfly 9 CR7 Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_superfly_9_cr7_edition.url],
   },
   {
@@ -1002,8 +847,6 @@ export const products: Product[] = [
     name: "Mercurial Superfly CR7 Safari Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_superfly_cr7_safari_edition.url],
   },
   {
@@ -1013,8 +856,6 @@ export const products: Product[] = [
     name: "Mercurial United Superfly Elite",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_united_superfly_elite.url],
   },
   {
@@ -1024,8 +865,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor.url],
   },
   {
@@ -1035,8 +874,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor 12 Elite FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_12_elite_fg.url],
   },
   {
@@ -1046,8 +883,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor 12 Elite NJR FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_12_elite_njr_fg.url],
   },
   {
@@ -1057,8 +892,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor 13 Elite",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_13_elite.url],
   },
   {
@@ -1068,8 +901,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor 14 Elite",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_14_elite.url],
   },
   {
@@ -1079,8 +910,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor 14 Elite FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_14_elite_fg.url],
   },
   {
@@ -1090,8 +919,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor 14 Elite FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_14_elite_fg_2.url],
   },
   {
@@ -1101,8 +928,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor 14 Elite FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_14_elite_fg_3.url],
   },
   {
@@ -1112,8 +937,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor 15 Air Zoom",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_15_air_zoom.url],
   },
   {
@@ -1123,8 +946,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor 15 Elite",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_15_elite.url],
   },
   {
@@ -1134,8 +955,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor 15 Elite",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_15_elite_2.url],
   },
   {
@@ -1145,8 +964,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor 15 Elite FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_15_elite_fg.url],
   },
   {
@@ -1156,8 +973,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor 15 Elite FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_15_elite_fg_2.url],
   },
   {
@@ -1167,8 +982,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor 15 Pro",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_15_pro.url],
   },
   {
@@ -1178,8 +991,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor 16 Elite FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_16_elite_fg.url],
   },
   {
@@ -1189,8 +1000,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor 16 Orange",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_16_orange.url],
   },
   {
@@ -1200,8 +1009,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor 17",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_17.url],
   },
   {
@@ -1211,8 +1018,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor Flyknit Ultra",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_flyknit_ultra.url],
   },
   {
@@ -1222,8 +1027,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor X FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_x_fg.url],
   },
   {
@@ -1233,8 +1036,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor X FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_x_fg_2.url],
   },
   {
@@ -1244,8 +1045,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor XI",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_xi.url],
   },
   {
@@ -1255,8 +1054,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor XI",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_xi_2.url],
   },
   {
@@ -1266,8 +1063,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor XII Elite",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_mercurial_vapor_xii_elite.url],
   },
   {
@@ -1277,8 +1072,6 @@ export const products: Product[] = [
     name: "Phantom",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_phantom.url],
   },
   {
@@ -1288,8 +1081,6 @@ export const products: Product[] = [
     name: "Phantom GT Cyan Limited Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_phantom_gt_cyan_limited_edition.url],
   },
   {
@@ -1299,8 +1090,6 @@ export const products: Product[] = [
     name: "Phantom GT2 Elite DF FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_phantom_gt2_elite_df_fg.url],
   },
   {
@@ -1310,8 +1099,6 @@ export const products: Product[] = [
     name: "Phantom GT2 Elite FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_phantom_gt2_elite_fg.url],
   },
   {
@@ -1321,8 +1108,6 @@ export const products: Product[] = [
     name: "Phantom GX 2 Elite FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_phantom_gx_2_elite_fg.url],
   },
   {
@@ -1332,8 +1117,6 @@ export const products: Product[] = [
     name: "Phantom GX Elite FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_phantom_gx_elite_fg.url],
   },
   {
@@ -1343,8 +1126,6 @@ export const products: Product[] = [
     name: "Phantom GX II Elite",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_phantom_gx_ii_elite.url],
   },
   {
@@ -1354,8 +1135,6 @@ export const products: Product[] = [
     name: "Phantom GX II Elite FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_phantom_gx_ii_elite_fg.url],
   },
   {
@@ -1365,8 +1144,6 @@ export const products: Product[] = [
     name: "Phantom Luna 2 Elite Purple Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_phantom_luna_2_elite_purple_edition.url],
   },
   {
@@ -1376,8 +1153,6 @@ export const products: Product[] = [
     name: "Superfly 9 Pink Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_superfly_9_pink_edition.url],
   },
   {
@@ -1387,8 +1162,6 @@ export const products: Product[] = [
     name: "Tiempo Legend 10",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_tiempo_legend_10.url],
   },
   {
@@ -1398,8 +1171,6 @@ export const products: Product[] = [
     name: "Tiempo Legend 10 Elite FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_tiempo_legend_10_elite_fg.url],
   },
   {
@@ -1409,8 +1180,6 @@ export const products: Product[] = [
     name: "Tiempo Legend X Elite",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_tiempo_legend_x_elite.url],
   },
   {
@@ -1420,8 +1189,6 @@ export const products: Product[] = [
     name: "Zoom Mercurial Speed Superfly 9 MDS CR7",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_zoom_mercurial_speed_superfly_9_mds_cr7.url],
   },
   {
@@ -1431,8 +1198,6 @@ export const products: Product[] = [
     name: "Zoom Mercurial Vapor 15 Elite KM",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_zoom_mercurial_vapor_15_elite_km.url],
   },
   {
@@ -1442,8 +1207,6 @@ export const products: Product[] = [
     name: "Zoom Mercurial Vapor 15 Pro",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_zoom_mercurial_vapor_15_pro.url],
   },
   {
@@ -1453,8 +1216,6 @@ export const products: Product[] = [
     name: "Zoom Mercurial Vapor 16 Elite 'Vini Jr'",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_zoom_mercurial_vapor_16_elite_vini_jr.url],
   },
   {
@@ -1464,8 +1225,6 @@ export const products: Product[] = [
     name: "Zoom Superfly 9 Elite FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_nike_zoom_superfly_9_elite_fg.url],
   },
   {
@@ -1475,8 +1234,6 @@ export const products: Product[] = [
     name: "Air Zoom Mercurial Vapor Elite SG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "SG",
     images: [sh_nike_air_zoom_mercurial_vapor_elite_sg.url],
   },
   {
@@ -1486,8 +1243,6 @@ export const products: Product[] = [
     name: "Hypervenom Phantom III DF SG Pro",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "SG",
     images: [sh_nike_hypervenom_phantom_iii_df_sg_pro.url],
   },
   {
@@ -1497,8 +1252,6 @@ export const products: Product[] = [
     name: "Magista Obra III Elite DF SG Pro",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "SG",
     images: [sh_nike_magista_obra_iii_elite_df_sg_pro.url],
   },
   {
@@ -1508,8 +1261,6 @@ export const products: Product[] = [
     name: "Mercurial Vapor X SG-Pro",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "SG",
     images: [sh_nike_mercurial_vapor_x_sg_pro.url],
   },
   {
@@ -1519,8 +1270,6 @@ export const products: Product[] = [
     name: "Phantom GX 2 Elite TF",
     subtitle: "",
     limited: false,
-    section: "Trainers",
-    ground: "TF",
     images: [sh_nike_phantom_gx_2_elite_tf.url],
   },
   {
@@ -1530,8 +1279,6 @@ export const products: Product[] = [
     name: "Phantom GX 2 Elite TF",
     subtitle: "",
     limited: false,
-    section: "Trainers",
-    ground: "TF",
     images: [sh_nike_phantom_gx_2_elite_tf_2.url],
   },
   {
@@ -1541,8 +1288,6 @@ export const products: Product[] = [
     name: "Phantom GX 2 Elite TF",
     subtitle: "",
     limited: false,
-    section: "Trainers",
-    ground: "TF",
     images: [sh_nike_phantom_gx_2_elite_tf_3.url],
   },
   {
@@ -1552,8 +1297,6 @@ export const products: Product[] = [
     name: "Phantom GX 2 Elite TF",
     subtitle: "",
     limited: false,
-    section: "Trainers",
-    ground: "TF",
     images: [sh_nike_phantom_gx_2_elite_tf_4.url],
   },
   {
@@ -1563,8 +1306,6 @@ export const products: Product[] = [
     name: "Phantom GX 2 Elite TF",
     subtitle: "",
     limited: false,
-    section: "Trainers",
-    ground: "TF",
     images: [sh_nike_phantom_gx_2_elite_tf_5.url],
   },
   {
@@ -1574,8 +1315,6 @@ export const products: Product[] = [
     name: "Phantom GX 2 Elite TF",
     subtitle: "",
     limited: false,
-    section: "Trainers",
-    ground: "TF",
     images: [sh_nike_phantom_gx_2_elite_tf_6.url],
   },
   {
@@ -1585,8 +1324,6 @@ export const products: Product[] = [
     name: "Phantom GX 2 Elite TF",
     subtitle: "",
     limited: false,
-    section: "Trainers",
-    ground: "TF",
     images: [sh_nike_phantom_gx_2_elite_tf_7.url],
   },
   {
@@ -1596,8 +1333,6 @@ export const products: Product[] = [
     name: "Phantom GX 2 Elite TF",
     subtitle: "",
     limited: false,
-    section: "Trainers",
-    ground: "TF",
     images: [sh_nike_phantom_gx_2_elite_tf_8.url],
   },
   {
@@ -1607,8 +1342,6 @@ export const products: Product[] = [
     name: "Phantom GX2 Elite TF",
     subtitle: "",
     limited: false,
-    section: "Trainers",
-    ground: "TF",
     images: [sh_nike_phantom_gx2_elite_tf.url],
   },
   {
@@ -1618,8 +1351,6 @@ export const products: Product[] = [
     name: "Phantom GX2 Elite TF",
     subtitle: "",
     limited: false,
-    section: "Trainers",
-    ground: "TF",
     images: [sh_nike_phantom_gx2_elite_tf_2.url],
   },
   {
@@ -1629,8 +1360,6 @@ export const products: Product[] = [
     name: "Future Tokyo Limited Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_puma_future_tokyo_limited_edition.url],
   },
   {
@@ -1640,8 +1369,6 @@ export const products: Product[] = [
     name: "Future Ultimate Blue Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_puma_future_ultimate_blue_edition.url],
   },
   {
@@ -1651,8 +1378,6 @@ export const products: Product[] = [
     name: "Future Ultimate FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_puma_future_ultimate_fg.url],
   },
   {
@@ -1662,8 +1387,6 @@ export const products: Product[] = [
     name: "Future Ultimate FG Red Edition",
     subtitle: "",
     limited: true,
-    section: "Studs",
-    ground: "FG",
     images: [sh_puma_future_ultimate_fg_red_edition.url],
   },
   {
@@ -1673,8 +1396,6 @@ export const products: Product[] = [
     name: "Ultra 5 Ultimate Volume Up FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_puma_ultra_5_ultimate_volume_up_fg.url],
   },
   {
@@ -1684,9 +1405,61 @@ export const products: Product[] = [
     name: "Ultra Ultimate FG",
     subtitle: "",
     limited: false,
-    section: "Studs",
-    ground: "FG",
     images: [sh_puma_ultra_ultimate_fg.url],
+  },
+  {
+    id: 300,
+    slug: "nike-tiempo-legend-8-elite-sg-red",
+    brand: "Nike",
+    name: "Tiempo Legend 8 Elite SG",
+    subtitle: "Red / White",
+    limited: false,
+    images: [sh_new_nike_tiempo_legend_8_elite_sg_red.url],
+  },
+  {
+    id: 301,
+    slug: "nike-mercurial-vapor-14-elite-sg-blueprint-white",
+    brand: "Nike",
+    name: "Mercurial Vapor 14 Elite SG",
+    subtitle: "Blueprint White",
+    limited: false,
+    images: [sh_new_nike_mercurial_vapor_14_elite_sg_blueprint_white.url],
+  },
+  {
+    id: 302,
+    slug: "nike-phantom-gx-elite-fg-white",
+    brand: "Nike",
+    name: "Phantom GX Elite FG",
+    subtitle: "Triple White",
+    limited: false,
+    images: [sh_new_nike_phantom_gx_elite_fg_white.url],
+  },
+  {
+    id: 303,
+    slug: "adidas-predator-precision-limited-collection-black-pink",
+    brand: "Adidas",
+    name: "Predator Precision",
+    subtitle: "Limited Collection Black / Pink",
+    limited: true,
+    images: [sh_new_adidas_predator_precision_limited_collection_black_pink.url],
+  },
+  {
+    id: 304,
+    slug: "mizuno-morelia-neo-sg-red",
+    brand: "Mizuno",
+    name: "Morelia Neo",
+    subtitle: "Red / White",
+    limited: false,
+    images: [sh_new_mizuno_morelia_neo_sg_red.url],
+  },
+  {
+    id: 305,
+    slug: "mizuno-morelia-neo-fg-blue",
+    brand: "Mizuno",
+    name: "Morelia Neo",
+    subtitle: "Blue / Gold",
+    limited: false,
+    images: [sh_new_mizuno_morelia_neo_fg_blue.url],
   },
 ];
 
@@ -1696,5 +1469,67 @@ export const getProduct = (slug: string) => products.find((p) => p.slug === slug
 export const byBrand = (brand: string) =>
   products.filter((p) => p.brand.toLowerCase() === brand.toLowerCase());
 
-export const byGround = (brand: Brand, section: Section, ground: Ground) =>
-  products.filter((p) => p.brand === brand && p.section === section && p.ground === ground);
+
+/* ---------- Model grouping: one card per boot model, colourways as variants ---------- */
+
+const COLOUR_WORDS =
+  "black|white|red|blue|pink|purple|green|gold|orange|yellow|silver|grey|gray|navy|champagne|turquoise|volt|crimson|teal|lime|dark purple|light blue|sky blue";
+
+const normaliseModel = (name: string) => {
+  let s = name.toLowerCase().trim();
+  s = s.replace(
+    new RegExp(
+      `\\s*\\b(${COLOUR_WORDS})\\b(\\s*(and|/|&)\\s*(${COLOUR_WORDS}))?\\s*(colorway|colourway|limited edition|edition|pack)?$`,
+    ),
+    "",
+  );
+  s = s.replace(/\s*(limited\s*)?edition$/, "");
+  s = s.replace(/\s+with lace$/, "");
+  return s.replace(/\s+/g, " ").trim();
+};
+
+const slugify = (s: string) =>
+  s
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
+export type Model = {
+  slug: string;
+  brand: Brand;
+  name: string;
+  limited: boolean;
+  variants: Product[];
+  images: string[];
+};
+
+export const models: Model[] = (() => {
+  const map = new Map<string, Product[]>();
+  for (const p of products) {
+    const key = `${p.brand}::${normaliseModel(p.name) || p.name.toLowerCase()}`;
+    const list = map.get(key);
+    if (list) list.push(p);
+    else map.set(key, [p]);
+  }
+  return [...map.values()].map((variants) => {
+    const base = [...variants].sort((a, b) => a.name.length - b.name.length)[0]!;
+    const name = normaliseModel(base.name)
+      ? base.name.slice(0, base.name.length).trim()
+      : base.name;
+    return {
+      slug: slugify(`${base.brand}-${normaliseModel(base.name) || base.name}`),
+      brand: base.brand,
+      name,
+      limited: variants.some((v) => v.limited),
+      variants,
+      images: variants.flatMap((v) => v.images),
+    };
+  });
+})();
+
+export const coreModels = models.filter((m) => !m.limited);
+export const limitedModels = models.filter((m) => m.limited);
+export const getModel = (slug: string) =>
+  models.find((m) => m.slug === slug || m.variants.some((v) => v.slug === slug));
+export const modelsByBrand = (brand: string) =>
+  models.filter((m) => m.brand.toLowerCase() === brand.toLowerCase());
