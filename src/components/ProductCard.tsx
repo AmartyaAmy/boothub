@@ -1,16 +1,17 @@
 import { Link } from "@tanstack/react-router";
-import type { Product } from "@/data/products";
+import type { Model } from "@/data/products";
 import { ImageCarousel } from "./ImageCarousel";
 import { SizeChips } from "./SizeChips";
 import { Price } from "./Price";
 
-export function ProductCard({ product, dark = false }: { product: Product; dark?: boolean }) {
+export function ProductCard({ model, dark = false }: { model: Model; dark?: boolean }) {
+  const variantCount = model.variants.length;
   return (
     <Link
       to="/boots/$slug"
-      params={{ slug: product.slug }}
+      params={{ slug: model.slug }}
       className="group block"
-      aria-label={`${product.brand} ${product.name}`}
+      aria-label={`${model.brand} ${model.name}`}
     >
       <div
         className={`relative aspect-[4/5] overflow-hidden rounded-sm ring-1 transition-all duration-500 ease-out group-hover:-translate-y-1.5 ${
@@ -20,13 +21,13 @@ export function ProductCard({ product, dark = false }: { product: Product; dark?
         }`}
       >
         <div className="absolute inset-0 scale-100 transition-transform duration-700 ease-out group-hover:scale-[1.05]">
-          <ImageCarousel images={product.images} alt={`${product.brand} ${product.name}`} />
+          <ImageCarousel images={model.images} alt={`${model.brand} ${model.name}`} />
         </div>
 
         <span className="absolute top-0 left-0 z-10 bg-accent-hot px-2.5 py-1.5 text-[11px] font-extrabold tracking-[0.16em] text-accent-hot-foreground shadow-[0_6px_16px_-4px_rgba(226,35,26,0.45)]">
           SALE
         </span>
-        {product.limited ? (
+        {model.limited ? (
           <span
             className={`absolute top-0 right-0 z-10 px-2 py-1 text-[10px] font-semibold tracking-[0.18em] ${
               dark ? "bg-bone text-ink" : "bg-ink text-bone"
@@ -46,11 +47,14 @@ export function ProductCard({ product, dark = false }: { product: Product; dark?
       </div>
 
       <div className="pt-4">
-        <p className="eyebrow text-muted-foreground">{product.brand}</p>
+        <p className="eyebrow text-muted-foreground">{model.brand}</p>
         <h3 className={`mt-1.5 text-sm font-semibold ${dark ? "text-bone" : "text-foreground"}`}>
-          {product.name}
-          {product.subtitle ? (
-            <span className={dark ? "text-bone/50" : "text-muted-foreground"}> · {product.subtitle}</span>
+          {model.name}
+          {variantCount > 1 ? (
+            <span className={dark ? "text-bone/50" : "text-muted-foreground"}>
+              {" "}
+              · {variantCount} colourways
+            </span>
           ) : null}
         </h3>
         <div className="mt-3">

@@ -4,7 +4,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
 import { SaleTicker } from "@/components/SaleTicker";
 import { InstagramCTA } from "@/components/InstagramCTA";
-import { limitedProducts } from "@/data/products";
+import { limitedModels } from "@/data/products";
 
 export const Route = createFileRoute("/limited")({
   head: () => ({
@@ -46,9 +46,9 @@ function Limited() {
 
         <section className="mx-auto max-w-[1500px] px-5 pb-24 md:px-10 md:pb-32">
           <div className="grid grid-cols-2 gap-x-5 gap-y-14 md:grid-cols-3 md:gap-x-8 lg:grid-cols-4">
-            {limitedProducts.map((p, i) => (
-              <Reveal key={p.slug} delay={(i % 4) * 70}>
-                <ProductCard product={p} dark />
+            {limitedModels.map((m, i) => (
+              <Reveal key={m.slug} delay={(i % 4) * 70}>
+                <ProductCard model={m} dark />
               </Reveal>
             ))}
           </div>

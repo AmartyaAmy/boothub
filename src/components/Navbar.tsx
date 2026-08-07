@@ -60,7 +60,7 @@ export function Navbar({ overHero = false }: { overHero?: boolean }) {
           <a
             href={INSTAGRAM_URL}
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noopener noreferrer"
             aria-label="BootHub on Instagram"
             className="h-5 w-5 text-bone/70 transition-colors hover:text-bone"
           >

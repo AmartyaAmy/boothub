@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { products, PRICE } from "@/data/products";
+import { getModel, products, PRICE } from "@/data/products";
 import { BootBadge } from "./Logo";
 
 const DURATION = 4200;
@@ -146,7 +146,7 @@ export function Hero() {
                   </Link>
                   <Link
                     to="/boots/$slug"
-                    params={{ slug: product.slug }}
+                    params={{ slug: getModel(product.slug)?.slug ?? product.slug }}
                     className="rounded-full border border-hairline-invert px-8 py-4 text-[11px] font-semibold tracking-[0.22em] text-bone backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-bone"
                   >
                     VIEW THIS PAIR
@@ -162,8 +162,8 @@ export function Hero() {
                   className="h-full w-full object-contain drop-shadow-[0_40px_60px_rgba(0,0,0,0.6)]"
                   style={{
                     transform: active
-                      ? "scale(1.04) translateY(0) rotate(-1deg)"
-                      : "scale(0.94) translateY(16px) rotate(-1deg)",
+                      ? "scale(1.04) translateY(0)"
+                      : "scale(0.94) translateY(16px)",
                     transition: "transform 4.6s cubic-bezier(0.22,1,0.36,1)",
                   }}
                 />

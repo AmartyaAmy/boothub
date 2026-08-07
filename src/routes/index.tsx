@@ -9,7 +9,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { InstagramCTA } from "@/components/InstagramCTA";
 import { Reveal } from "@/components/Reveal";
 import { IconArrow } from "@/components/Icons";
-import { coreProducts, limitedProducts } from "@/data/products";
+import { coreModels, limitedModels } from "@/data/products";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,9 +55,9 @@ function Home() {
         </Reveal>
 
         <div className="mt-12 grid grid-cols-2 gap-x-5 gap-y-14 md:grid-cols-3 md:gap-x-8 lg:grid-cols-4">
-          {coreProducts.slice(0, 8).map((p, i) => (
-            <Reveal key={p.slug} delay={(i % 4) * 80}>
-              <ProductCard product={p} />
+          {coreModels.slice(0, 8).map((m, i) => (
+            <Reveal key={m.slug} delay={(i % 4) * 80}>
+              <ProductCard model={m} />
             </Reveal>
           ))}
         </div>
@@ -84,9 +84,9 @@ function Home() {
           </Reveal>
 
           <div className="mt-14 grid grid-cols-2 gap-x-5 gap-y-14 md:grid-cols-3 md:gap-x-8 lg:grid-cols-4">
-            {limitedProducts.slice(0, 8).map((p, i) => (
-              <Reveal key={p.slug} delay={(i % 4) * 80}>
-                <ProductCard product={p} dark />
+            {limitedModels.slice(0, 8).map((m, i) => (
+              <Reveal key={m.slug} delay={(i % 4) * 80}>
+                <ProductCard model={m} dark />
               </Reveal>
             ))}
           </div>

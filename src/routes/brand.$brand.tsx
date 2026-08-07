@@ -3,12 +3,13 @@ import { PageHeader, SiteLayout } from "@/components/SiteLayout";
 import { ProductGrid } from "@/components/ProductGrid";
 import { SaleTicker } from "@/components/SaleTicker";
 import { TrustBar } from "@/components/TrustBar";
-import { byBrand } from "@/data/products";
+import { modelsByBrand } from "@/data/products";
 
 const BRANDS: Record<string, { name: string; line: string }> = {
   nike: { name: "Nike", line: "Mercurial speed silos built for the last yard." },
   adidas: { name: "Adidas", line: "F50 and Predator — control, or pure acceleration." },
   puma: { name: "Puma", line: "Future and Ultra — plush touch, brutal top speed." },
+  mizuno: { name: "Mizuno", line: "Morelia Neo — Japanese kangaroo-leather touch." },
 };
 
 export const Route = createFileRoute("/brand/$brand")({
@@ -45,7 +46,7 @@ function BrandPage() {
     <SiteLayout>
       <PageHeader eyebrow="Shop by brand" title={name} intro={line} />
       <SaleTicker />
-      <ProductGrid items={byBrand(key)} lockBrand={BRANDS[key]!.name as never} />
+      <ProductGrid items={modelsByBrand(key)} lockBrand={BRANDS[key]!.name as never} />
       <TrustBar />
     </SiteLayout>
   );

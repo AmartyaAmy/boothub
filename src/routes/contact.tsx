@@ -47,7 +47,7 @@ function Contact() {
             <a
               href={INSTAGRAM_URL}
               target="_blank"
-              rel="noreferrer noopener"
+              rel="noopener noreferrer"
               className="border border-hairline-invert p-8 transition-colors hover:border-bone"
             >
               <span className="block h-6 w-6 text-bone">

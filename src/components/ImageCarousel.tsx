@@ -8,6 +8,7 @@ type Props = {
   interval?: number;
   eager?: boolean;
   className?: string;
+  startIndex?: number;
 };
 
 export function ImageCarousel({
@@ -17,11 +18,16 @@ export function ImageCarousel({
   interval = 3800,
   eager = false,
   className = "",
+  startIndex = 0,
 }: Props) {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(startIndex);
   const [paused, setPaused] = useState(false);
   const touchX = useRef<number | null>(null);
   const multi = images.length > 1;
+
+  useEffect(() => {
+    setIndex(Math.min(startIndex, Math.max(images.length - 1, 0)));
+  }, [startIndex, images.length]);
 
   useEffect(() => {
     if (!multi || !autoPlay || paused) return;
