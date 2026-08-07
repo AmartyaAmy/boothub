@@ -55,7 +55,7 @@ function ProductPage() {
   // index of the selected variant's first photo inside the combined gallery
   const jumpTo = model.variants
     .slice(0, variantIndex)
-    .reduce((acc, v) => acc + v.images.length, 0);
+    .reduce((acc: number, v: { images: string[] }) => acc + v.images.length, 0);
 
   const related = models
     .filter((m) => m.slug !== model.slug && m.brand === model.brand && m.limited === model.limited)
