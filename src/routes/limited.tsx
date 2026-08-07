@@ -46,7 +46,7 @@ function Limited() {
 
         <section className="mx-auto max-w-[1500px] px-5 pb-24 md:px-10 md:pb-32">
           <div className="grid grid-cols-2 gap-x-5 gap-y-14 md:grid-cols-3 md:gap-x-8 lg:grid-cols-4">
-            {limitedModels.map((p, i) => (
+            {limitedModels.map((m, i) => (
               <Reveal key={m.slug} delay={(i % 4) * 70}>
                 <ProductCard model={m} dark />
               </Reveal>

@@ -7,6 +7,7 @@ import { Price } from "@/components/Price";
 import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
 import { IconCash, IconIndia, IconReturn, IconShip } from "@/components/Icons";
+import type { Product } from "@/data/products";
 import { INSTAGRAM_URL, getModel, models } from "@/data/products";
 
 export const Route = createFileRoute("/boots/$slug")({
@@ -55,7 +56,7 @@ function ProductPage() {
   // index of the selected variant's first photo inside the combined gallery
   const jumpTo = model.variants
     .slice(0, variantIndex)
-    .reduce((acc: number, v: { images: string[] }) => acc + v.images.length, 0);
+    .reduce((acc: number, v: Product) => acc + v.images.length, 0);
 
   const related = models
     .filter((m) => m.slug !== model.slug && m.brand === model.brand && m.limited === model.limited)
@@ -99,7 +100,7 @@ function ProductPage() {
                     Colour / design — {model.variants.length} available
                   </p>
                   <div className="mt-4 flex flex-wrap gap-3">
-                    {model.variants.map((v, i) => (
+                    {model.variants.map((v: Product, i: number) => (
                       <button
                         key={v.slug}
                         type="button"
