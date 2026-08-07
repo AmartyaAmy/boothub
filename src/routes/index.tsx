@@ -57,7 +57,7 @@ function Home() {
         <div className="mt-12 grid grid-cols-2 gap-x-5 gap-y-14 md:grid-cols-3 md:gap-x-8 lg:grid-cols-4">
           {coreProducts.slice(0, 8).map((p, i) => (
             <Reveal key={p.slug} delay={(i % 4) * 80}>
-              <ProductCard product={p} />
+              <ProductCard model={m} />
             </Reveal>
           ))}
         </div>
@@ -86,7 +86,7 @@ function Home() {
           <div className="mt-14 grid grid-cols-2 gap-x-5 gap-y-14 md:grid-cols-3 md:gap-x-8 lg:grid-cols-4">
             {limitedProducts.slice(0, 8).map((p, i) => (
               <Reveal key={p.slug} delay={(i % 4) * 80}>
-                <ProductCard product={p} dark />
+                <ProductCard model={m} dark />
               </Reveal>
             ))}
           </div>

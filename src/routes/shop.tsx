@@ -4,7 +4,7 @@ import { ProductGrid } from "@/components/ProductGrid";
 import { BrandGrid } from "@/components/BrandGrid";
 import { SaleTicker } from "@/components/SaleTicker";
 import { TrustBar } from "@/components/TrustBar";
-import { products } from "@/data/products";
+import { models } from "@/data/products";
 
 export const Route = createFileRoute("/shop")({
   head: () => ({
@@ -36,7 +36,7 @@ function Shop() {
         intro="Nike, Adidas and Puma elite silos, flat ₹6,999 in UK 6 to 12. Filter by brand, studs or turf, tap a pair for the full spec."
       />
       <SaleTicker />
-      <ProductGrid items={products} />
+      <ProductGrid items={models} />
       <BrandGrid />
       <TrustBar />
     </SiteLayout>
